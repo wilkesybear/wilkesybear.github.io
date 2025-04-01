@@ -8,6 +8,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex
+
       - name: Generate PDF
         uses: docker://pandoc/core:latest
         with:
