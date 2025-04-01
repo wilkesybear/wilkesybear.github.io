@@ -4,9 +4,7 @@
 
 # Andrew Wilkes
 
-📍 37 Orient Ave, #2 Brooklyn, NY 11211  
-📞 267-266-9410  
-📧 [wilkesaj@gmail.com](mailto:wilkesaj@gmail.com)  
+📍 Brooklyn, NY 
 🔗 [LinkedIn](https://www.linkedin.com/in/ajwilkes/) | [GitHub](https://github.com/wilkesybear)  
 🧑‍💻 **Product-minded engineer.** I love working in a team environment and solving hard (and often vague) problems! Strong believer in servant leadership.  
 
