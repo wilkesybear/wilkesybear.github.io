@@ -1,3 +1,7 @@
+<div style="position:fixed; right:10px; top:10px">
+  <a href="Andrew-Wilkes-Resume.pdf" class="btn">Download as PDF</a>
+</div>
+
 # Andrew Wilkes
 
 📍 37 Orient Ave, #2 Brooklyn, NY 11211  
