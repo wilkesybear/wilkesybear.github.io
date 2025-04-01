@@ -8,18 +8,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-xetex
-
       - name: Generate PDF
-        uses: docker://pandoc/core:latest
+        uses: docker://pandoc/latex:latest
         with:
-          args: "README.md -o resume.pdf --pdf-engine=xelatex -V geometry:margin=1in"
+          args: "README.md -o Andrew-Wilkes-Resume.pdf --pdf-engine=xelatex -V geometry:margin=1in"
 
-      - name: Upload PDF
-        uses: actions/upload-artifact@v4
+      - name: Commit PDF
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          name: resume-pdf
-          path: resume.pdf
+          commit_message: "chore: Update resume PDF [skip ci]"
+          file_pattern: Andrew-Wilkes-Resume.pdf
+          skip_fetch: true
