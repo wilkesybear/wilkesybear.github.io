@@ -1,5 +1,6 @@
-name: Generate PDF
-on: [push]
+name: Generate PDF (not currently automatic)
+on:
+  workflow_dispatch: # This enables manual triggering only
 
 jobs:
   convert:
