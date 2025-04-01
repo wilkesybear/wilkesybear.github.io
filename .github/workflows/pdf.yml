@@ -1,14 +1,20 @@
 name: Generate PDF
 on: [push]
+
 jobs:
   convert:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker://pandoc/core:latest
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Generate PDF
+        uses: docker://pandoc/core:latest
         with:
-          args: README.md -o resume.pdf --pdf-engine=xelatex -V geometry:margin=1in
-      - uses: actions/upload-artifact@v3
+          args: "README.md -o resume.pdf --pdf-engine=xelatex -V geometry:margin=1in"
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
           path: resume.pdf
