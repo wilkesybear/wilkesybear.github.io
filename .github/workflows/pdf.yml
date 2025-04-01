@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate PDF
         run: |
-          pandoc README.md -o Andrew-Wilkes-Resume.pdf --pdf-engine=xelatex -V geometry:margin=1in
+          pandoc README.md -o Andrew-Wilkes-Resume.pdf --pdf-engine=xelatex -V geometry:margin=1in -H style.css
 
       - name: Commit PDF
         uses: stefanzweifel/git-auto-commit-action@v4
