@@ -4,18 +4,26 @@ on: [push]
 jobs:
   convert:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
 
       - name: Generate PDF
-        uses: docker://pandoc/latex:latest
-        with:
-          args: "README.md -o Andrew-Wilkes-Resume.pdf --pdf-engine=xelatex -V geometry:margin=1in"
+        run: |
+          pandoc README.md -o Andrew-Wilkes-Resume.pdf --pdf-engine=xelatex -V geometry:margin=1in
 
       - name: Commit PDF
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore: Update resume PDF [skip ci]"
           file_pattern: Andrew-Wilkes-Resume.pdf
-          skip_fetch: true
