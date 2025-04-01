@@ -4,8 +4,9 @@
 
 # Andrew Wilkes
 
-📍 Brooklyn, NY 
-🔗 [LinkedIn](https://www.linkedin.com/in/ajwilkes/) | [GitHub](https://github.com/wilkesybear)  
+📍 Brooklyn, NY 11211     
+🔗 [LinkedIn](https://www.linkedin.com/in/ajwilkes/) | [GitHub](https://github.com/wilkesybear) 
+
 🧑‍💻 **Product-minded engineer.** I love working in a team environment and solving hard (and often vague) problems! Strong believer in servant leadership.  
 
 ## Experience
