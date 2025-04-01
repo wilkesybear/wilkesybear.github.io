@@ -1,5 +1,5 @@
-<div style="position:fixed; right:10px; top:10px">
-  <a href="Andrew-Wilkes-Resume.pdf" class="btn">Download as PDF</a>
+<div style="text-align:right;font-size:16px">
+  <a href="Andrew-Wilkes-Resume.pdf" class="btn" download>Download as a PDF</a>
 </div>
 
 # Andrew Wilkes
@@ -19,19 +19,19 @@
 - Key contributor to large projects like [Unified Accounts](https://docs.stripe.com/connect/migrate-to-controller-properties), [Embedded Components](https://docs.stripe.com/connect/get-started-connect-embedded-components), [V2 Accounts](https://docs.stripe.com/connect/accounts-v2/saas-platform-payments-billing) architecture, platform monetization with [Instant Payouts](https://docs.stripe.com/connect/instant-payouts), and critical incidents like SVB.
 - Previously contributed to teams building initial versions of **[stripe.com/card](https://stripe.com/card)** (interim manager, 6 months) and **[stripe.com/treasury](https://stripe.com/treasury)**.
 
-### **[Off Their Plate](https://www.offtheirplate.org/)** — *Tech Lead (Volunteer)*  
-*Mar 2020 - Feb 2023* _(primarily nights and weekends)_
-- Led the **Tech Team** at a volunteer-led nonprofit that provides meals to food-insecure communities by partnering with restaurants.
-- Built automation tools to streamline operations, including automatic scheduling, email processing, feedback surveys, photo ingestion, and ledgering.
-- Reduced manual effort for city operations teams, enabling greater focus on restaurant and healthcare partnerships.
-- Continued involvement beyond the COVID-19 emergency to address ongoing food insecurity and restaurant industry challenges.
-
 ### **HyperScience** — *Director of Engineering*  
 *Dec 2015 - Dec 2019*
 - Built the original sales demo that became HyperScience’s flagship product, driving growth from $0 to $20M ARR.
 - Led 4 teams totaling 22 engineers developing a product deployed at 20+ enterprises, generating $20M+ ARR.
 - Scaled the engineering org from 10 to 45, leading hiring, project management, and people processes.
 - Developed the engineering career ladder, deployment strategy, on-call support, and documentation.
+
+### **[Off Their Plate](https://www.offtheirplate.org/)** — *Tech Lead (Volunteer)*  
+*Mar 2020 - Feb 2023* _(primarily nights and weekends)_
+- Led the **Tech Team** at a volunteer-led nonprofit that provides meals to food-insecure communities by partnering with restaurants.
+- Built automation tools to streamline operations, including automatic scheduling, email processing, feedback surveys, photo ingestion, and ledgering.
+- Reduced manual effort for city operations teams, enabling greater focus on restaurant and healthcare partnerships.
+- Continued involvement beyond the COVID-19 emergency to address ongoing food insecurity and restaurant industry challenges.
 
 ### **Tumblr** — *Engineer / Team Lead (Core PHP & Media)*  
 *Jul 2014 - Nov 2015*  
@@ -51,16 +51,12 @@
 🎓 **University of Virginia**  
 **B.S. Computer Science** — *Graduated with Highest Distinction (CS GPA: 3.98)*
 
----
-
 ## Technical Experience
 
 - **Languages & Frameworks:** Python, Ruby, Django, Typescript/JavaScript, React, C++
 - **General:** Project management, Working knowledge of ML concepts, People management (not currently preferred)
 
----
-
 ## Personal Life
 
-- 🎸 **Music & DJing:** Semi-professional musician and DJ. Check out my work on [Spotify](#).
+- 🎸 **Music & DJing:** Professional musician and DJ ([Spotify](https://open.spotify.com/artist/0TDie1d28rzsDiDhK9CUJD?si=Ry1akG6yQ16ZYmipOo-fzg))
 - 🧗‍♂️ **Sports Enthusiast:** Passionate about rock climbing, snowboarding, and ultimate frisbee.
