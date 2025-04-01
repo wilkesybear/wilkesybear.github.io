@@ -57,5 +57,5 @@
 
 ## Personal Life
 
-- 🎸 **Music & DJing:** Professional musician and DJ ([Spotify](https://open.spotify.com/artist/0TDie1d28rzsDiDhK9CUJD?si=Ry1akG6yQ16ZYmipOo-fzg))
-- 🧗‍♂️ **Sports Enthusiast:** Passionate about rock climbing, snowboarding, and ultimate frisbee.
+- 🎸 Professional musician and DJ ([Spotify](https://open.spotify.com/artist/0TDie1d28rzsDiDhK9CUJD?si=Ry1akG6yQ16ZYmipOo-fzg))
+- 🧗‍♂️ Sports/outdoors Enthusiast: Passionate about rock climbing, snowboarding, and ultimate frisbee.
