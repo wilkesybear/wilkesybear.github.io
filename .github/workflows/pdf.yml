@@ -18,15 +18,20 @@ jobs:
         with:
           pandoc-version: 'latest'
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-xetex
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
 
-      - name: Generate PDF
-        run: |
-          pandoc README.md -o Andrew-Wilkes-Resume.pdf --pdf-engine=xelatex -V geometry:margin=1in -H style.css
+      - name: Install wkhtmltopdf
+        run: sudo apt-get install -y wkhtmltopdf
 
+      - name: Convert Markdown to HTML
+        run: pandoc README.md -o output.html --css=styles.css
+
+      - name: Convert HTML to PDF
+        run: wkhtmltopdf --enable-local-file-access output.html Andrew-Wilkes-Resume.pdf
+        
       - name: Commit PDF
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
