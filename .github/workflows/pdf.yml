@@ -1,40 +1,64 @@
-name: Generate PDF (not currently automatic)
+name: Generate resume PDF
+
 on:
-  workflow_dispatch: # This enables manual triggering only
+  push:
+    branches: [main]
+    paths: [index.md]
+  workflow_dispatch:
+
+concurrency:
+  group: resume-pdf
+  cancel-in-progress: true
 
 jobs:
-  convert:
+  generate:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Check out the repository
+        uses: actions/checkout@v6
         with:
           persist-credentials: true
 
-      - name: Install Pandoc
-        uses: r-lib/actions/setup-pandoc@v2
+      - name: Install Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+
+      - name: Wait for this revision to reach GitHub Pages
+        env:
+          RESUME_URL: https://wilkesybear.github.io/
+          REVISION: ${{ github.sha }}
+        run: |
+          for attempt in {1..60}; do
+            if curl --fail --silent --show-error "$RESUME_URL" \
+              | grep --fixed-strings --quiet "data-revision=\"$REVISION\""; then
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "Timed out waiting for GitHub Pages to deploy revision $REVISION" >&2
+          exit 1
+
+      - name: Print the live resume to PDF
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          RESUME_URL: https://wilkesybear.github.io/
+        run: |
+          "$CHROME_PATH" \
+            --headless \
+            --disable-gpu \
+            --no-sandbox \
+            --no-pdf-header-footer \
+            --print-to-pdf="$GITHUB_WORKSPACE/Andrew-Wilkes-Resume.pdf" \
+            "$RESUME_URL"
+
+          test -s Andrew-Wilkes-Resume.pdf
+
+      - name: Commit the refreshed PDF
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          pandoc-version: 'latest'
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-
-      - name: Install wkhtmltopdf
-        run: sudo apt-get install -y wkhtmltopdf
-
-      - name: Convert Markdown to HTML
-        run: pandoc index.md -o output.html --css=styles.css --metadata charset=UTF-8
-
-      - name: Convert HTML to PDF
-        run: wkhtmltopdf --enable-local-file-access output.html Andrew-Wilkes-Resume.pdf
-        
-      - name: Commit PDF
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore: Update resume PDF [skip ci]"
+          commit_message: "chore: update resume PDF [skip ci]"
           file_pattern: Andrew-Wilkes-Resume.pdf

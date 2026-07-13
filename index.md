@@ -1,11 +1,40 @@
-<div style="text-align:right;font-size:16px">
+<style>
+@page { size: letter; margin: 0.5in; }
+
+@media print {
+  .markdown-body > h1:first-child,
+  .pdf-download,
+  .footer {
+    display: none !important;
+  }
+
+  .markdown-body {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h3 + p {
+    break-after: avoid;
+  }
+
+  .markdown-body h3 + p + ul {
+    break-inside: avoid;
+  }
+}
+</style>
+
+<span aria-hidden="true" style="display:none" data-revision="{{ site.github.build_revision }}"></span>
+
+<div class="pdf-download" style="text-align:right;font-size:16px">
   <a href="Andrew-Wilkes-Resume.pdf" class="btn" download>Download as a PDF</a>
 </div>
 
 # Andrew Wilkes
 
-📍 Brooklyn, NY 11211  
-📬 [Email](mailto:work.with.wilkes@gmail.com)  
+📍 Brooklyn, NY<br>
+📬 [Email](mailto:work.with.wilkes@gmail.com)<br>
 🔗 [LinkedIn](https://www.linkedin.com/in/ajwilkes/) | [GitHub](https://github.com/wilkesybear)
 
 
@@ -13,12 +42,20 @@
 
 ## Experience
 
-### **Stripe** — *Staff Engineer*  
-*Jan 2020 - Present*  
-- Full-stack engineer on [**Stripe Connect**](https://stripe.com/connect), focusing on funds flows and enabling money movement use cases for marketplaces and SaaS platforms worldwide.
-- Currently leading a project to greatly improve [Separate Charges and Transfers](https://docs.stripe.com/connect/separate-charges-and-transfers), aligning teams across three separate orgs for product planning and technical execution. Led technical strategy and all API design aspects. 
-- Key contributor to large projects like [Unified Accounts](https://docs.stripe.com/connect/migrate-to-controller-properties), [Embedded Components](https://docs.stripe.com/connect/get-started-connect-embedded-components), [V2 Accounts](https://docs.stripe.com/connect/accounts-v2/saas-platform-payments-billing) architecture, platform monetization with [Instant Payouts](https://docs.stripe.com/connect/instant-payouts), and critical incidents like SVB.
-- Previously contributed to teams building initial versions of **[stripe.com/card](https://stripe.com/card)** (interim manager, 6 months) and **[stripe.com/treasury](https://stripe.com/treasury)**.
+### **OpenAI** — *Member of Technical Staff*
+
+*Jul 2025 - Present*
+
+- Shipped [AgentKit](https://openai.com/index/introducing-agentkit/) and [Workspace Agents](https://openai.com/index/introducing-workspace-agents-in-chatgpt/).
+
+### **Stripe** — *Staff Engineer*
+
+*Jan 2020 - May 2025*
+
+- Worked as a full-stack engineer on [**Stripe Connect**](https://stripe.com/connect), focusing on funds flows and enabling money movement use cases for marketplaces and SaaS platforms worldwide.
+- Led [funds segregation for Separate Charges and Transfers](https://docs.stripe.com/connect/funds-segregation), aligning teams across three orgs on product planning and technical execution; owned technical strategy and API design.
+- Contributed to large projects including [Unified Accounts](https://docs.stripe.com/connect/migrate-to-controller-properties), [Embedded Components](https://docs.stripe.com/connect/get-started-connect-embedded-components), [V2 Accounts](https://docs.stripe.com/connect/accounts-v2/saas-platform-payments-billing) architecture, platform monetization with [Instant Payouts](https://docs.stripe.com/connect/instant-payouts), and critical incidents including SVB.
+- Contributed to teams building the initial versions of **[stripe.com/card](https://stripe.com/card)** (interim manager, 6 months) and **[stripe.com/treasury](https://stripe.com/treasury)**.
 
 ### **HyperScience** — *Director of Engineering*  
 *Dec 2015 - Dec 2019*
